@@ -8,17 +8,28 @@ A production-quality starting point for a B2B SaaS, covering the free feature se
 
 ---
 
-## Upgrade to the full version
+## Lite vs Full — what's the difference?
 
-The Lite version covers the essentials. The paid full version adds:
+| Capability | Lite (free) | Full ($99) |
+|---|:---:|:---:|
+| Authentication (email/password + OAuth) | ✓ | ✓ |
+| Multi-tenancy (orgs + members) | ✓ | ✓ |
+| RBAC (Owner / Admin / Member) | ✓ | ✓ |
+| Projects CRUD module | ✓ | ✓ |
+| Dashboard overview | ✓ | ✓ |
+| Stripe billing + webhook (HMAC-verified) | — | ✓ |
+| API keys (hashed) + versioned public API | — | ✓ |
+| Per-org audit logs | — | ✓ |
+| 1-click Vercel deploy + Neon provisioning | — | ✓ |
+| Typed API layer (route() + Zod) | — | ✓ |
+| 90-second setup walkthrough (Loom) | — | ✓ |
+| Deploy help | — | ✓ |
+| Priority email support | — | ✓ |
+| Lifetime updates | — | ✓ |
 
-- **Billing** — Subscription model + Stripe webhook handler (signature-verified) + plans UI
-- **API keys** — SHA-256-hashed keys, shown once; powers a versioned public API at `/api/v1/*`
-- **Audit logs** — every mutation records who/what/when, scoped per org
-- **1-click Vercel deploy** — provisions a Neon Postgres DB, runs migrations, seeds demo data
-- **Typed API layer** — `route()` wrapper + `ok()`/`err()` helpers with Zod validation
+**[Upgrade to Full on Gumroad — $99](https://slashman413.gumroad.com/l/saas-starter)**
 
-**[Get the full version on Gumroad — $99](https://slashman413.gumroad.com/l/saas-starter)**
+One-time payment · Perpetual license · Lifetime updates included · Priority email support
 
 ---
 

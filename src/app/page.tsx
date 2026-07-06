@@ -10,6 +10,23 @@ const features = [
   { title: "Projects CRUD", desc: "A fully wired generic CRUD module — swap 'Project' for your real business entity." },
 ];
 
+const comparisonRows: { capability: string; lite: boolean; full: boolean }[] = [
+  { capability: "Authentication (email/password + OAuth)", lite: true,  full: true  },
+  { capability: "Multi-tenancy (orgs + members)",          lite: true,  full: true  },
+  { capability: "RBAC (Owner / Admin / Member)",           lite: true,  full: true  },
+  { capability: "Projects CRUD module",                    lite: true,  full: true  },
+  { capability: "Dashboard overview",                      lite: true,  full: true  },
+  { capability: "Stripe billing + webhook (HMAC-verified)",lite: false, full: true  },
+  { capability: "API keys (hashed) + versioned public API",lite: false, full: true  },
+  { capability: "Per-org audit logs",                      lite: false, full: true  },
+  { capability: "1-click Vercel deploy + Neon provisioning",lite: false,full: true  },
+  { capability: "Typed API layer (route() + Zod)",         lite: false, full: true  },
+  { capability: "90-second setup walkthrough (Loom)",      lite: false, full: true  },
+  { capability: "Deploy help",                             lite: false, full: true  },
+  { capability: "Priority email support",                  lite: false, full: true  },
+  { capability: "Lifetime updates",                        lite: false, full: true  },
+];
+
 export default function HomePage() {
   return (
     <main className="bg-gray-50 text-gray-900 antialiased">
@@ -64,20 +81,80 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* LITE vs FULL COMPARISON TABLE */}
+      <section className="mx-auto max-w-4xl px-6 py-20">
+        <h2 className="text-center text-3xl font-black sm:text-4xl">Lite (free) vs Full ($99)</h2>
+        <p className="mx-auto mt-3 max-w-xl text-center text-gray-600">
+          Lite covers everything you need to validate an idea. Full is the complete production stack — plus support and lifetime updates.
+        </p>
+        <div className="mt-10 overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-5 py-3 text-left font-semibold text-gray-700">Capability</th>
+                <th className="px-5 py-3 text-center font-semibold text-gray-500 w-28">Lite — free</th>
+                <th className="px-5 py-3 text-center font-semibold text-brand w-28">Full — $99</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {comparisonRows.map(({ capability, lite, full }) => (
+                <tr key={capability} className="hover:bg-gray-50">
+                  <td className="px-5 py-3 text-gray-800">{capability}</td>
+                  <td className="px-5 py-3 text-center">
+                    {lite ? (
+                      <span className="text-green-500 font-semibold">✓</span>
+                    ) : (
+                      <span className="text-gray-300">—</span>
+                    )}
+                  </td>
+                  <td className="px-5 py-3 text-center">
+                    {full ? (
+                      <span className="text-green-500 font-semibold">✓</span>
+                    ) : (
+                      <span className="text-gray-300">—</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* UPGRADE CTA */}
-      <section className="bg-indigo-600 py-16 text-white">
+      <section className="bg-indigo-600 py-16 text-white" id="upgrade">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-black">Need billing, API keys, or audit logs?</h2>
+          <div className="mb-4 inline-block rounded-full bg-indigo-500 px-4 py-1 text-sm font-semibold">
+            Upgrade to Full — $99
+          </div>
+          <h2 className="text-3xl font-black">The complete production stack.</h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-indigo-200">
-            The full paid version adds Stripe billing, SHA-256-hashed API keys with a versioned public API,
-            per-org audit logs, a 1-click Vercel deploy button, and a typed route() wrapper with Zod validation.
+            Everything in Lite, plus the features that turn a validated idea into a shippable product:
           </p>
+          <ul className="mx-auto mt-6 max-w-sm space-y-2 text-left text-indigo-100">
+            {[
+              "Stripe billing + HMAC-verified webhook",
+              "API keys (hashed) + versioned public API (/api/v1/*)",
+              "Per-org audit logs — drop-in compliance trail",
+              "1-click Vercel deploy + Neon provisioning",
+              "Typed API layer (route() + Zod validation)",
+              "90-second setup walkthrough (Loom)",
+              "Deploy help",
+              "Priority email support — 1 business day",
+              "Lifetime updates — free forever",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="mt-0.5 text-indigo-300">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
           <a href={FULL_VERSION_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-block">
             <button className="rounded-lg bg-white px-8 py-3 text-base font-semibold text-indigo-700 transition hover:bg-indigo-50">
-              Upgrade to the full version — $99
+              Upgrade to Full — $99 on Gumroad
             </button>
           </a>
-          <p className="mt-3 text-sm text-indigo-300">One-time payment · Instant download · Perpetual license</p>
+          <p className="mt-3 text-sm text-indigo-300">One-time payment · Perpetual license · Lifetime updates included</p>
         </div>
       </section>
 
