@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button, Card } from "@/components/ui";
 
-const FULL_VERSION_URL = "https://slashman413.gumroad.com/l/saas-starter";
+const FULL_VERSION_URL = "https://slashmaster6.gumroad.com/l/kuvajr";
 
 const features = [
   { title: "Authentication", desc: "Email/password + OAuth (Google) via Auth.js v5, bcrypt, JWT sessions." },

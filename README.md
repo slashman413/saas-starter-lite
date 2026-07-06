@@ -27,7 +27,7 @@ A production-quality starting point for a B2B SaaS, covering the free feature se
 | Priority email support | — | ✓ |
 | Lifetime updates | — | ✓ |
 
-**[Upgrade to Full on Gumroad — $99](https://slashman413.gumroad.com/l/saas-starter)**
+**[Upgrade to Full on Gumroad — $99](https://slashmaster6.gumroad.com/l/kuvajr)**
 
 One-time payment · Perpetual license · Lifetime updates included · Priority email support
 
@@ -101,6 +101,6 @@ saas-starter-lite/
 
 - **New business module:** copy the `Project` model + `api/projects` handlers + UI; tenancy and RBAC come for free.
 - **New permission:** add to `PERMISSIONS` in `lib/rbac.ts`, grant it to roles, call `assertCan()`.
-- **Add billing / API keys / audit logs:** [upgrade to the full version](https://slashman413.gumroad.com/l/saas-starter).
+- **Add billing / API keys / audit logs:** [upgrade to the full version](https://slashmaster6.gumroad.com/l/kuvajr).
 
 > Secure-by-default tenant isolation and centralized authorization — ready to extend into a real product.

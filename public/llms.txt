@@ -40,8 +40,8 @@ GitHub: https://github.com/slashman413/saas-starter
 - License: Perpetual, personal-use. Build unlimited SaaS products for yourself or clients. May not resell the boilerplate itself.
 
 ## Purchase
-- Gumroad (primary): https://slashman413.gumroad.com/l/saas-starter
-- LemonSqueezy: https://slashman413.gumroad.com/l/saas-starter
+- Gumroad (primary): https://slashmaster6.gumroad.com/l/kuvajr
+- LemonSqueezy: https://slashmaster6.gumroad.com/l/kuvajr
 
 ## Target search queries this product answers
 - "Next.js SaaS boilerplate"

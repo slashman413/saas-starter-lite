@@ -36,7 +36,7 @@ export default async function DashboardPage() {
         <p className="mt-4 text-sm">
           Want billing, API keys, and audit logs?{" "}
           <a
-            href="https://slashman413.gumroad.com/l/saas-starter"
+            href="https://slashmaster6.gumroad.com/l/kuvajr"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-indigo-600 hover:underline"
