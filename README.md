@@ -6,6 +6,12 @@ A production-quality starting point for a B2B SaaS, covering the free feature se
 
 **Stack:** Next.js 15 (App Router) · TypeScript · PostgreSQL · Prisma · Auth.js (NextAuth v5) · Tailwind CSS
 
+## Free vs Full
+
+The free Lite version is fully functional — authentication, organizations, and RBAC, with no locked features in what's included. If you also want Stripe billing, API keys, and per-org audit logs, there's a paid full version: **[SaaS Starter Full on Gumroad](https://slashmaster6.gumroad.com/l/kuvajr)**. Details in [Lite vs Full](#lite-vs-full--whats-the-difference) below.
+
+附繁體中文產品導覽頁（[`docs/index.html`](docs/index.html)）— includes a Traditional Chinese (zh-TW) product tour.
+
 ## 🚀 Try it in 2 clicks
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fslashman413%2Fsaas-starter-lite&project-name=saas-starter-lite&repository-name=saas-starter-lite&env=AUTH_SECRET&envDescription=Random%2032-byte%20secret%20for%20session%20encryption&envLink=https%3A%2F%2Fgenerate-secret.vercel.app%2F32&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22neon%22%2C%22productSlug%22%3A%22neon%22%2C%22protocol%22%3A%22storage%22%7D%5D)
