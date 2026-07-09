@@ -20,15 +20,25 @@ What happens, in order:
 
 Done. Open the deployment URL and sign in.
 
-## Option B — I run it for you
+## Option B — Deploy from the CLI
 
-Give me a Neon `DATABASE_URL` and a Vercel token and run:
+If you'd rather not use the button, deploy with the Vercel CLI. You need a Neon
+(or any Postgres) `DATABASE_URL` and a Vercel token from [vercel.com/account/tokens](https://vercel.com/account/tokens):
 
-```powershell
-$env:DATABASE_URL = "postgresql://...";   # Neon pooled string
-$env:VERCEL_TOKEN = "...";                # vercel.com/account/tokens
-./scripts/deploy-prod.ps1
+```bash
+export VERCEL_TOKEN="..."                     # vercel.com/account/tokens
+
+npx vercel link --yes --token "$VERCEL_TOKEN" # create/link the Vercel project
+
+# Set the two required env vars (each command prompts for the value):
+npx vercel env add DATABASE_URL production --token "$VERCEL_TOKEN"   # paste your Neon pooled string
+npx vercel env add AUTH_SECRET production --token "$VERCEL_TOKEN"    # paste output of: openssl rand -base64 32
+
+npx vercel deploy --prod --token "$VERCEL_TOKEN"
 ```
+
+The production build runs the same `vercel-build` script as Option A
+(`scripts/vercel-setup.mjs`), so the schema push and demo seed happen automatically.
 
 ## Troubleshooting
 
