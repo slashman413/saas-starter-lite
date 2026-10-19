@@ -37,19 +37,24 @@ export const POST = route(async (req) => {
     slug = `${base}-${i}`;
   }
 
-  const result = await prisma.$transaction(async (tx) => {
-    const user = await tx.user.create({
-      data: { name: body.name, email: body.email, passwordHash },
-    });
-    const org = await tx.organization.create({
-      data: {
-        name: body.orgName,
-        slug,
-        memberships: { create: { userId: user.id, role: Role.OWNER } },
+  const org = await prisma.organization.create({
+    data: {
+      name: body.orgName,
+      slug,
+      memberships: {
+        create: {
+          role: Role.OWNER,
+          user: {
+            create: { name: body.name, email: body.email, passwordHash },
+          },
+        },
       },
-    });
-    return { user, org };
+    },
+    include: {
+      memberships: { include: { user: true } },
+    },
   });
 
-  return created({ userId: result.user.id, organization: { id: result.org.id, slug: result.org.slug } });
+  const user = org.memberships[0].user;
+  return created({ userId: user.id, organization: { id: org.id, slug: org.slug } });
 });

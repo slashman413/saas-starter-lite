@@ -12,6 +12,6 @@ export default auth((req) => {
 });
 
 export const config = {
-  // Run on everything except static assets.
-  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+  // Run on everything except static assets, Auth.js routes, and Vercel observability routes.
+  matcher: ["/((?!api/auth|_next/static|_next/image|_vercel|favicon.ico).*)"],
 };

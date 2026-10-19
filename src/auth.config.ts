@@ -4,6 +4,7 @@ import type { NextAuthConfig } from "next-auth";
 // Imported by both `middleware.ts` (Edge runtime) and `auth.ts` (Node runtime),
 // so it must stay free of Node APIs. The credentials/bcrypt logic lives in auth.ts.
 export const authConfig = {
+  trustHost: true,
   session: { strategy: "jwt" }, // required when using the Credentials provider
   pages: { signIn: "/login" },
   providers: [], // real providers are attached in auth.ts (Node runtime)

@@ -96,6 +96,8 @@ gtag('config', '${GA_ID}');`}
             <CheckoutTracker />
           </>
         ) : null}
+        <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
+        <Script src="/_vercel/speed-insights/script.js" strategy="afterInteractive" />
       </body>
     </html>
   );
