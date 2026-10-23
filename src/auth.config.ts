@@ -4,7 +4,9 @@ import type { NextAuthConfig } from "next-auth";
 // Imported by both `middleware.ts` (Edge runtime) and `auth.ts` (Node runtime),
 // so it must stay free of Node APIs. The credentials/bcrypt logic lives in auth.ts.
 export const authConfig = {
-  trustHost: true,
+  // trustHost is left unset on purpose: Auth.js then trusts X-Forwarded-Host only
+  // when AUTH_TRUST_HOST, AUTH_URL or VERCEL is set (or outside production), so a
+  // self-hosted deploy can't have its callback/redirect URLs spoofed.
   session: { strategy: "jwt" }, // required when using the Credentials provider
   pages: { signIn: "/login" },
   providers: [], // real providers are attached in auth.ts (Node runtime)
